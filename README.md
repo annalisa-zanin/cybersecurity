@@ -12,7 +12,7 @@ This repository contains a set of exercises focused on cybersecurity topics, par
 Before running the scripts, make sure you have the following installed:
 - Python 3.x
 - Necessary Python libraries (`socket`, `argparse`, etc.)
-- A Bash-compatible terminal for running the `.sh` script
+- A Bash-compatible terminal for running the `.sh` script (i.e. GitBash for Windows)
 
 ## How to Use
 
@@ -36,7 +36,7 @@ Once the Bash script is executable, you can run it with the following command:
 Replace <target-ip> with the IP address of the target device or network you want to scan.
 Alternatively, you can run the Python script directly using Python:
 ```bash
-python3 network_scanner.py <target-ip>
+python3 network_scanner.py
 ```
 
 ### 4. Scan Details
