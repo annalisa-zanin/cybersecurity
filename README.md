@@ -18,6 +18,10 @@ The program scans a target IP address to identify which ports are open on device
 This exercise demonstrates how communication between a server and multiple clients works.
 - `chat_server.py`: A Python script implementing the logic of a server that receives messages from clients and broadcasts those messages to all other connected clients.
 - `chat_client.py`: A Python script implementing the logic of a client that can send messages to, and receive messages from, the server.
+## File Transfer (FTP) Exercise
+This exercise demonstrates how a server can receive and save files sent from a client over a network connection.
+- `ftp_server.py`: A Python script implementing the logic of a server that listens for incoming file transfers from clients, receives the file, and saves it with a timestamped name.
+- `ftp_client.py`: A Python script implementing the logic of a client that sends a file to the server for storage.
 
 ## Network Scanning Exercise
 
@@ -61,17 +65,45 @@ First, start the chat server by running the following command in your terminal:
 ```bash
 python3 chat_server.py
 ```
-The server will listen for incoming connections from clients on all network interfaces (0.0.0.0) and port 12345 by default. You can modify the script to change the port if needed.
+The server will listen for incoming connections from clients on all network interfaces (`0.0.0.0`) and port `12345` by default. You can modify the script to change the port if needed.
 
 #### 3. Run the Chat Client
 Next, open a new terminal window and start a chat client with the following command:
 ```bash
 python3 chat_client.py
 ```
-The client will connect to the server at 127.0.0.1 (localhost) and port 12345 by default. Ensure the server is running before starting the client. You can start multiple clients to simulate a group chat.
+The client will connect to the server at `127.0.0.1` (localhost) and port `12345` by default. Ensure the server is running before starting the client. You can start multiple clients to simulate a group chat.
 
 #### 4. Security Considerations
 When running this exercise:
 - Ensure the server is running in a secure environment, as it accepts connections from any client on the specified port.
 - Avoid exposing the server to untrusted networks unless additional security measures, such as authentication or encryption, are implemented.
-- Be mindful of network activity; excessive testing may generate unwanted traffic
+- Be mindful of network activity; excessive testing may generate unwanted traffic.
+
+## File Transfer (FTP) Exercise
+### How to Use
+
+#### 1. Clone the Repository
+To clone this repository to your local machine, run the following command:
+```bash
+git clone https://github.com/annalisa-zanin/cybersecurity.git
+```
+#### 2. Run the FTP Server
+First, start the FTP server by running the following command in your terminal:
+```bash
+python3 ftp_server.py
+```
+The server will listen for incoming connections from clients on all network interfaces (`0.0.0.0`) and port `12345` by default. You can modify the script to change the port if needed.
+
+#### 3. Run the FTP Client
+Next, open a new terminal window and start an FTP client with the following command:
+```bash
+python3 ftp_client.py
+```
+The client will connect to the server at `127.0.0.1` (localhost) and port `12345` by default. Ensure the server is running before starting the client. The client can send a file to the server for storage.
+
+#### 4. Security Considerations
+When running this exercise:
+- Ensure the server is running in a secure environment, as it accepts connections from any client on the specified port.
+- Avoid exposing the server to untrusted networks unless additional security measures, such as authentication or encryption, are implemented.
+- Be mindful of network activity; excessive testing may generate unwanted traffic.
