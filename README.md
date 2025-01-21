@@ -1,4 +1,4 @@
-# Cybersecurity Exercises
+# Cybersecurity and Networks Exercises
 
 This repository contains a set of exercises focused on cybersecurity topics, particularly related to networks and vulnerability assesment.
 
@@ -22,6 +22,11 @@ This exercise demonstrates how communication between a server and multiple clien
 This exercise demonstrates how a server can receive and save files sent from a client over a network connection.
 - `ftp_server.py`: A Python script implementing the logic of a server that listens for incoming file transfers from clients, receives the file, and saves it with a timestamped name.
 - `ftp_client.py`: A Python script implementing the logic of a client that sends a file to the server for storage.
+## Web Scraper Exercise
+This exercise demonstrates how to gather and parse data from a website using HTTP requests and HTML parsing. It introduces the use of two essential libraries: `requests` for making HTTP requests and `BeautifulSoup` for parsing and extracting content from HTML.
+-`simple_web_scraper.py`: A Python script that fetches the content of a specified web page, extracts the page title, paragraphs, and image links, and displays the results in the terminal.
+
+# Notes and Details
 
 ## Network Scanning Exercise
 
@@ -88,6 +93,7 @@ To clone this repository to your local machine, run the following command:
 ```bash
 git clone https://github.com/annalisa-zanin/cybersecurity.git
 ```
+
 #### 2. Run the FTP Server
 First, start the FTP server by running the following command in your terminal:
 ```bash
@@ -107,3 +113,37 @@ When running this exercise:
 - Ensure the server is running in a secure environment, as it accepts connections from any client on the specified port.
 - Avoid exposing the server to untrusted networks unless additional security measures, such as authentication or encryption, are implemented.
 - Be mindful of network activity; excessive testing may generate unwanted traffic.
+
+## Web Scraper Exercise
+
+#### 1. Clone the Repository
+To clone this repository to your local machine, run the following command:
+```bash
+git clone https://github.com/annalisa-zanin/cybersecurity.git
+```
+
+#### 2. Install Required Libraries
+Before running the web scraper, ensure you have the required Python libraries installed. You can install them using pip:
+```bash
+pip install requests beautifulsoup4
+```
+
+#### 3. Run the Web Scraper
+To run the scraper, use the following command in your terminal:
+```bash
+python3 simple_web_scraper.py
+```
+The script will scrape a predefined website for specific information, such as titles, links, or other structured data. By default, it uses `requests` to fetch the webpage and `BeautifulSoup` to parse and extract the desired content.
+
+#### 4. Modify the Scraper
+4. Modify the Scraper
+You can customize the scraper to target different websites or extract other types of information. To do this:
+- Open the `simple_web_scraper.py` file in a text editor.
+- Update the URL variable with the new website.
+- Modify the `BeautifulSoup` selectors to match the HTML structure of the target page.
+
+#### 5. Security Considerations
+When running this exercise:
+- Be respectful of the target website's Terms of Service and ensure scraping is permitted.
+- Avoid sending too many requests in a short period, as this may overload the server or result in your IP being blocked.
+- Do not scrape sensitive or private data without explicit permission.
