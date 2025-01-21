@@ -1,47 +1,77 @@
 # Cybersecurity Exercises
 
-This repository contains a set of exercises focused on cybersecurity topics, particularly related to network scanning and vulnerability assessment.
+This repository contains a set of exercises focused on cybersecurity topics, particularly related to networks and vulnerability assesment.
 
-## Repository Structure
-## NETWORK SCANNING EXERCISE
-- `execute_network_scanner.sh`: A Bash script that executes the `network_scanner.py` Python script.
-- `network_scanner.py`: A Python script for scanning a network, given its IP address, and for scanning the open ports of a device identified by its IP address.
-
-## NETWORK SCANNING EXERCISE
-## Prerequisites
+### Prerequisites
 Before running the scripts, make sure you have the following installed:
 - Python 3.x
 - Necessary Python libraries (`socket`, `argparse`, etc.)
 - A Bash-compatible terminal for running the `.sh` script (i.e. GitBash for Windows)
 
-## How to Use
+# Repository Structure
+## Network Scanning Exercise
+This exercise demonstrates the basics of network communication, including how sockets and addressing work within a network.
+The program scans a target IP address to identify which ports are open on devices in the network. It uses Python's socket module to attempt connections to common ports and reports their status (open or closed).
+- `execute_network_scanner.sh`: A Bash script to execute the network_scanner.py Python script with predefined or user-specified parameters.
+- `network_scanner.py`: A Python script for scanning a network to discover devices by their IP addresses and to identify open ports on a given target device.
+## Chat Simulation Exercise
+This exercise demonstrates how communication between a server and multiple clients works.
+- `chat_server.py`: A Python script implementing the logic of a server that receives messages from clients and broadcasts those messages to all other connected clients.
+- `chat_client.py`: A Python script implementing the logic of a client that can send messages to, and receive messages from, the server.
 
-### 1. Clone the Repository
+## Network Scanning Exercise
+
+### How to Use
+
+#### 1. Clone the Repository
 To clone this repository to your local machine, run the following command:
 ```bash
 git clone https://github.com/annalisa-zanin/cybersecurity.git
 ```
 
-### 2. Make the Bash Script Executable
+#### 2. Make the Bash Script Executable
 To run the execute_network_scanner.sh script, you'll need to grant execution permissions to the file. You can do this by running the following command:
 ```bash
 chmod +x execute_network_scanner.sh
 ```
 
-### 3. Run the Network Scanner
+#### 3. Run the Network Scanner
 Once the Bash script is executable, you can run it with the following command:
 ```bash
-./execute_network_scanner.sh <target-ip>
+./execute_network_scanner.sh
 ```
-Replace <target-ip> with the IP address of the target device or network you want to scan.
 Alternatively, you can run the Python script directly using Python:
 ```bash
 python3 network_scanner.py
 ```
-
-### 4. Scan Details
-The network_scanner.py script will scan the target IP address to check which ports are open on the device.
-It uses the socket module to attempt connections to common ports and report their status (open or closed).
-
-### 5. Security Considerations
+#### 4. Security Considerations
 Be cautious when using network scanning tools, as they can trigger alarms in intrusion detection systems (IDS) or be considered malicious activity on networks that you do not own or have permission to scan. Always ensure you have authorization before performing any network scans.
+
+## Chat Simulation Exercise
+### How to Use
+
+#### 1. Clone the Repository
+To clone this repository to your local machine, run the following command:
+```bash
+git clone https://github.com/annalisa-zanin/cybersecurity.git
+```
+
+#### 2. Run the Chat Server
+First, start the chat server by running the following command in your terminal:
+```bash
+python3 chat_server.py
+```
+The server will listen for incoming connections from clients on all network interfaces (0.0.0.0) and port 12345 by default. You can modify the script to change the port if needed.
+
+#### 3. Run the Chat Client
+Next, open a new terminal window and start a chat client with the following command:
+```bash
+python3 chat_client.py
+```
+The client will connect to the server at 127.0.0.1 (localhost) and port 12345 by default. Ensure the server is running before starting the client. You can start multiple clients to simulate a group chat.
+
+#### 4. Security Considerations
+When running this exercise:
+- Ensure the server is running in a secure environment, as it accepts connections from any client on the specified port.
+- Avoid exposing the server to untrusted networks unless additional security measures, such as authentication or encryption, are implemented.
+- Be mindful of network activity; excessive testing may generate unwanted traffic
