@@ -25,6 +25,10 @@ This exercise demonstrates how a server can receive and save files sent from a c
 ## Web Scraper Exercise
 This exercise demonstrates how to gather and parse data from a website using HTTP requests and HTML parsing. It introduces the use of two essential libraries: `requests` for making HTTP requests and `BeautifulSoup` for parsing and extracting content from HTML.
 -`simple_web_scraper.py`: A Python script that fetches the content of a specified web page, extracts the page title, paragraphs, and image links, and displays the results in the terminal.
+## Password Cracking Simulation Exercise
+This exercise demonstrates how hashed passwords can be brute-forced or cracked using a dictionary of common passwords.
+- `hashed_password_cracking.py`: A Python script implementing the logic to brute-force or dictionary-attack a hashed password. It showcases the use of hashing algorithms and iterative attempts to match a target hash.
+- `password_dictionary.txt`: A text file containing a list of commonly used passwords, which the script can use to attempt to crack the hash.
 
 # Notes and Details
 
@@ -147,3 +151,31 @@ When running this exercise:
 - Be respectful of the target website's Terms of Service and ensure scraping is permitted.
 - Avoid sending too many requests in a short period, as this may overload the server or result in your IP being blocked.
 - Do not scrape sensitive or private data without explicit permission.
+
+## Password Cracking Simulation Exercise
+
+#### 1. Clone the Repository
+To clone this repository to your local machine, run the following command:
+```bash
+git clone https://github.com/annalisa-zanin/cybersecurity.git
+```
+
+#### 2. Prepare the Environment
+Be sure you have Python installed on your machine. You may also need the `password_dictionary.txt` file, which contains a list of passwords for the dictionary attack. If you don’t have it, create a text file with sample passwords, one per line.
+
+#### 3. Run the Password Cracking Script
+Execute the password cracking script by running the following command:
+```bash
+python3 hashed_password_cracking.py 
+```
+
+#### 4. Adjust Script Parameters
+The script uses default values for the target hashed password and maximum password length for brute force. You can modify these directly in the `hashed_password_cracking.py` file:
+- Target Password: Replace `target_password` in the script with the desired password to test.
+- Maximum Length: Adjust `max_length` to specify the maximum length of passwords to attempt during brute force.
+
+#### 5. Security Considerations
+When running this exercise:
+- Be cautious about using the script on real systems or accounts without explicit permission.
+- Ensure that any dictionary file used does not contain sensitive information.
+- Understand the ethical (an legal!) implications of password cracking and use this exercise solely for educational purposes.
